@@ -3,54 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML to WebP Conversion</title>
+  <meta name="description" content="HTML 2 Image Converter - Convert your HTML banners to WebP images easily. Fast, efficient, and reliable.">
+  <meta name="keywords" content="HTML to WebP, HTML to Image, WebP converter, HTML banner to image, HTML to WebP online">
+  <meta name="author" content="html2img.e4you.in">
+  <title>HTML 2 Image Converter</title>
+  
+  <!-- Social Media Meta Tags for better SEO -->
+  <meta property="og:title" content="HTML 2 Image Converter - Convert HTML to WebP Image">
+  <meta property="og:description" content="Convert your HTML banners to WebP images easily using our tool.">
+  <meta property="og:image" content="https://html2img.e4you.in/images/og-image.png">
+  <meta property="og:url" content="https://html2img.e4you.in">
+  <meta property="og:type" content="website">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HTML 2 Image Converter - Convert HTML to WebP Image">
+  <meta name="twitter:description" content="Convert your HTML banners to WebP images easily using our tool.">
+  <meta name="twitter:image" content="https://html2img.e4you.in/images/twitter-image.png">
+
+  <!-- Script for HTML to Image Conversion -->
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.7/dist/html2canvas.min.js"></script>
+  
+  <!-- Styles -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    h1, h2, h3, p {
+      margin: 10px 0;
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      max-width: 200px;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    #preview {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Textarea for HTML input -->
-<!-- Article Content -->
-  <h1>HTML बैनर को इमेज में कन्वर्ट करें</h1>
-  <p>क्या आप अपने HTML बैनर को इमेज में बदलना चाहते हैं? इस टूल की मदद से आप अपने HTML बैनर को आसानी से WebP इमेज फॉर्मेट में कन्वर्ट कर सकते हैं। यह न सिर्फ आपकी वेबसाइट की स्पीड बढ़ाता है, बल्कि WebP फॉर्मेट के जरिए इमेज की क्वालिटी भी बनाए रखता है।</p>
+  <!-- Header -->
+  <header>
+    <h1>HTML 2 Image Converter</h1>
+  </header>
 
-  <h2>HTML से WebP इमेज में कन्वर्ट करने का आसान तरीका</h2>
-  <p>नीचे दिए गए टेक्स्ट बॉक्स में अपने HTML बैनर को पेस्ट करें और "Convert" बटन दबाएं। आपका HTML बैनर तुरंत WebP इमेज में बदल जाएगा।</p>
+  <!-- Main Content -->
+  <main>
+    <h1>HTML बैनर को इमेज में कन्वर्ट करें</h1>
+    <p>क्या आप अपने HTML बैनर को इमेज में बदलना चाहते हैं? इस टूल की मदद से आप अपने HTML बैनर को आसानी से WebP इमेज फॉर्मेट में कन्वर्ट कर सकते हैं। यह न सिर्फ आपकी वेबसाइट की स्पीड बढ़ाता है, बल्कि WebP फॉर्मेट के जरिए इमेज की क्वालिटी भी बनाए रखता है।</p>
 
-  <!-- Textarea for HTML input -->
-  <h3>HTML बैनर पेस्ट करें:</h3>
-  <textarea id="htmlInput" rows="10" cols="80" placeholder="HTML कोड यहाँ पेस्ट करें"></textarea><br><br>
+    <h2>HTML से WebP इमेज में कन्वर्ट करने का आसान तरीका</h2>
+    <p>नीचे दिए गए टेक्स्ट बॉक्स में अपने HTML बैनर को पेस्ट करें और "Convert" बटन दबाएं। आपका HTML बैनर तुरंत WebP इमेज में बदल जाएगा।</p>
 
-  <!-- Convert Button -->
-  <button onclick="convertToWebP()">Convert to WebP</button>
+    <h3>HTML बैनर पेस्ट करें:</h3>
+    <textarea id="htmlInput" rows="10" placeholder="HTML कोड यहाँ पेस्ट करें"></textarea><br>
 
-  <!-- Preview Section -->
-  <div id="preview" style="margin-top: 20px;">
-    <h3>Generated WebP Image Preview:</h3>
-    <img id="outputImage" alt="WebP Image will appear here">
-  </div>
+    <button onclick="convertToWebP()">Convert to WebP</button>
 
-  <!-- JavaScript Code -->
+    <div id="preview">
+      <h3>Generated WebP Image Preview:</h3>
+      <img id="outputImage" alt="WebP Image will appear here">
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 HTML 2 Image Converter | Powered by <a href="https://html2img.e4you.in" style="color: #ffdd57;">html2img.e4you.in</a></p>
+  </footer>
+
+  <!-- JavaScript Code for Image Conversion -->
   <script>
     function convertToWebP() {
-      // Get the HTML input from the textarea
       var htmlContent = document.getElementById('htmlInput').value;
-
-      // Create a new div element and set its innerHTML to the textarea content
       var bannerDiv = document.createElement('div');
       bannerDiv.innerHTML = htmlContent;
-      bannerDiv.style.position = 'absolute';  // Position it out of view
-      bannerDiv.style.left = '-9999px';       // Move it off-screen
+      bannerDiv.style.position = 'absolute';
+      bannerDiv.style.left = '-9999px';
       document.body.appendChild(bannerDiv);
 
-      // Use html2canvas to convert the banner to WebP image
       html2canvas(bannerDiv).then(function(canvas) {
-        // Convert canvas to WebP format
         var webpImage = canvas.toDataURL('image/webp');
-        
-        // Display the image in the preview section
         document.getElementById('outputImage').src = webpImage;
-
-        // Optional: Remove the temporary banner div if no longer needed
-        // document.body.removeChild(bannerDiv);  // You can uncomment this later if required
       });
     }
   </script>
