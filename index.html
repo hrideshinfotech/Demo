@@ -29,6 +29,8 @@
       // Create a new div element and set its innerHTML to the textarea content
       var bannerDiv = document.createElement('div');
       bannerDiv.innerHTML = htmlContent;
+      bannerDiv.style.position = 'absolute';  // Position it out of view
+      bannerDiv.style.left = '-9999px';       // Move it off-screen
       document.body.appendChild(bannerDiv);
 
       // Use html2canvas to convert the banner to WebP image
@@ -39,8 +41,8 @@
         // Display the image in the preview section
         document.getElementById('outputImage').src = webpImage;
 
-        // Remove the temporary banner div after conversion
-        document.body.removeChild(bannerDiv);
+        // Optional: Remove the temporary banner div if no longer needed
+        // document.body.removeChild(bannerDiv);  // You can uncomment this later if required
       });
     }
   </script>
